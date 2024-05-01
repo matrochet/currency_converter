@@ -39,100 +39,102 @@ xmlns="http://www.ecb.int/vocabulary/2002-08-01/eurofxref">
     </Cube>
 </Cube>
 </gesmes:Envelope>
-`
+`;
 
-export default loadData = () => {
-    const CURRENCIES = {}
-    
-    // Extraire data contenues dans les balises
-    // <Cube></Cube>
-    
-    const BALISE_CUBE = '<Cube>'
-    const positionCubeEntree = data.indexOf(BALISE_CUBE)
+export const loadData = () => {
+  const CURRENCIES = {};
 
-    // console.log(positionCubeEntree)
-    
-    const BALISE_CUBE_FIN = '</Cube>'
-    const positionCubeSortie = data.lastIndexOf(BALISE_CUBE_FIN)
-    
-    // console.log(positionCubeSortie)
+  // Extraire data contenues dans les balises
+  // <Cube></Cube>
 
-    const Taille_Balise_Fin = BALISE_CUBE_FIN.length
-    const dataXML = data.substring(positionCubeEntree, positionCubeSortie + Taille_Balise_Fin)
-    
-    // console.log(dataXML)
+  const BALISE_CUBE = "<Cube>";
+  const positionCubeEntree = data.indexOf(BALISE_CUBE);
 
-    // Manipuler XML data
+  // console.log(positionCubeEntree)
 
-    // Créer un DomParser
-    
-    const parser = new DOMParser
-    const mineTypeXML = 'text/xml'
+  const BALISE_CUBE_FIN = "</Cube>";
+  const positionCubeSortie = data.lastIndexOf(BALISE_CUBE_FIN);
 
-    // Converting text XML on DocumentXML
-    
-    const documentXML = parser.parseFromString(dataXML, mineTypeXML)
-    
-    console.log(documentXML)
+  // console.log(positionCubeSortie)
 
-    // Browse our XML document  
+  const Taille_Balise_Fin = BALISE_CUBE_FIN.length;
+  const dataXML = data.substring(
+    positionCubeEntree,
+    positionCubeSortie + Taille_Balise_Fin
+  );
 
-    // Collect the first Cube tag
-   
-    const cube1 = documentXML.firstElementChild
+  // console.log(dataXML)
 
-    console.log(cube1)
+  // Manipuler XML data
 
-    // Collect the second Cube tag embedded in the first
+  // Créer un DomParser
 
-    const cube2 = cube1.firstElementChild
+  const parser = new DOMParser();
+  const mineTypeXML = "text/xml";
 
-    console.log(cube2)
-    console.log(cube2.attributes)
+  // Converting text XML on DocumentXML
 
-    // Collect the attributes
+  const documentXML = parser.parseFromString(dataXML, mineTypeXML);
 
-    const cubeAttributes = cube2.attributes
+  console.log(documentXML);
 
-    // Collect the time attribute
+  // Browse our XML document
 
-    const attrTime = cubeAttributes.getNamedItem('time')
+  // Collect the first Cube tag
 
-    console.log(attrTime)
+  const cube1 = documentXML.firstElementChild;
 
-    const time = attrTime.value
+  console.log(cube1);
 
-    console.log(time)
+  // Collect the second Cube tag embedded in the first
 
-    // Shows date on screen
+  const cube2 = cube1.firstElementChild;
 
-    const timeElement = document.getElementById('time')
-    timeElement.textContent = `Dates of rates: ${time}`
+  console.log(cube2);
+  console.log(cube2.attributes);
 
-    // Browse cube2 and collect all elements (cube)
-    
-    const elements = cube2.children
+  // Collect the attributes
 
-    console.log(elements)
+  const cubeAttributes = cube2.attributes;
 
-    // To each element
+  // Collect the time attribute
 
-    for (const element of elements) {
+  const attrTime = cubeAttributes.getNamedItem("time");
 
-        // Collect currency and rate attribute
+  console.log(attrTime);
 
-        const attributs = element.attributes
-        const currencyText = attributs.getNamedItem('currency').value
-        const rateText =  attributs.getNamedItem('rate').value
+  const time = attrTime.value;
 
-        const monnaie = currencyText.toLowerCase()
-        const taux = parseFloat(rateText)
+  console.log(time);
 
-        // Add money at gloabl object 
+  // Shows date on screen
 
-        CURRENCIES[monnaie] = taux
-    }
-    console.log(CURRENCIES)
+  const timeElement = document.getElementById("time");
+  timeElement.textContent = `Dates of rates: ${time}`;
 
-    return CURRENCIES 
-}
+  // Browse cube2 and collect all elements (cube)
+
+  const elements = cube2.children;
+
+  console.log(elements);
+
+  // To each element
+
+  for (const element of elements) {
+    // Collect currency and rate attribute
+
+    const attributs = element.attributes;
+    const currencyText = attributs.getNamedItem("currency").value;
+    const rateText = attributs.getNamedItem("rate").value;
+
+    const monnaie = currencyText.toLowerCase();
+    const taux = parseFloat(rateText);
+
+    // Add money at gloabl object
+
+    CURRENCIES[monnaie] = taux;
+  }
+  console.log(CURRENCIES);
+
+  return CURRENCIES;
+};
