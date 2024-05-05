@@ -2,7 +2,7 @@ import { loadData } from "./loading.js";
 
 const CURRENCIES = loadData();
 
-// console.log(CURRENCIES)
+console.log(CURRENCIES)
 
 // Récupérer les deux champs
 const eurgbpInput = document.getElementById("input-eurgbp");

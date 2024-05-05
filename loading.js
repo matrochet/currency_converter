@@ -134,7 +134,7 @@ export const loadData = () => {
 
     CURRENCIES[monnaie] = taux;
   }
-  console.log(CURRENCIES);
+  // console.log(CURRENCIES);
 
   return CURRENCIES;
 };
