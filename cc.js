@@ -33,16 +33,16 @@ for (const currency of currenciesList) {
 const container = document.getElementById("container");
 
 // Add the fragment to the container
-container.appendChild(fragment);
+container.appendChild(fragment)
 
 const onChange = () => {
  
 }
 
 // Collect all text input
-const champs = document.querySelectorAll('input')
+const inputs = document.querySelectorAll('input')
 
-console.log(champs)
+console.log(inputs)
 
 // Associate a function when changing a input
 
