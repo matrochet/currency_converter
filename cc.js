@@ -23,7 +23,7 @@ for (const currency of currenciesList) {
     <span>EUR</span>
     <span class="egal">------------</span>
     <input type="number" id="${currency}-eur" step="0.00001" value="${rates}" />
-    <span>$[currency.toUpperCase()]</span>
+    <span>${currency.toUpperCase()}</span>
   </div>`;
 
   fragment.appendChild(divElement);
