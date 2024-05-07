@@ -16,7 +16,7 @@ console.log(currenciesList)
 const fragment = document.createDocumentFragment()
 
 for (const currency of currenciesList) {
-  const rates = CURRENCIES[devise]
+  const rates = CURRENCIES[currency]
 
   const divElement = document.createElement('div')
   divElement.innerHTML = `
