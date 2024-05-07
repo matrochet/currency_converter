@@ -2,23 +2,21 @@ import { loadData } from "./loading.js";
 
 const CURRENCIES = loadData();
 
-console.log(CURRENCIES)
-
 //Collect all the properties of the CURRENCIES object
-const currenciesList = Object.keys(CURRENCIES)
+const currenciesList = Object.keys(CURRENCIES);
 
-console.log(currenciesList)
+console.log(currenciesList);
 
-// For each currency 
+// For each currency
 
-// Personalize the HTML code of line 
+// Personalize the HTML code of line
 
-const fragment = document.createDocumentFragment()
+const fragment = document.createDocumentFragment();
 
 for (const currency of currenciesList) {
-  const rates = CURRENCIES[currency]
+  const rates = CURRENCIES[currency];
 
-  const divElement = document.createElement('div')
+  const divElement = document.createElement("div");
   divElement.innerHTML = `
   <div class="devise">
     <input type="number" id="eur-${currency}" step="0.00001" value="1" />
@@ -26,25 +24,24 @@ for (const currency of currenciesList) {
     <span class="egal">------------</span>
     <input type="number" id="${currency}-eur" step="0.00001" value="${rates}" />
     <span>GBP</span>
-  </div>`
+  </div>`;
 
-  fragment.appendChild(divElement)
+  fragment.appendChild(divElement);
 }
 
-// Collect the container 
-const container = document.getElementById('container')
+// Collect the container
+const container = document.getElementById("container");
 
 // Add the fragment to the container
-container.appendChild(fragment)
-
+container.appendChild(fragment);
 
 // Récupérer les deux champs
 // const eurgbpInput = document.getElementById("input-eurgbp");
 // const gbpeurInput = document.getElementById("input-gbpeur");
-// 
+//
 // Initialize the rate show at screen
 // gbpeurInput.value = CURRENCIES.gbp.toFixed(5);
-// 
+//
 // Associer un évènement qui correspond au changement de la valeur du champ
 // eurgbpInput.addEventListener("input", () => {
 // Récupérer la valeur saisir by user
@@ -59,12 +56,12 @@ container.appendChild(fragment)
 // console.log(newConversion)
 // Converting new number in text with 5 digits
 // const newConversionTexte = newConversion.toFixed(5);
-  
+
 // console.log(newConversionTexte)
 // Update input
 // gbpeurInput.value = newConversionTexte;
 // });
-// 
+//
 // gbpeurInput.addEventListener("input", () => {
 // Récupérer la valeur saisir by user
 // const gbp = gbpeurInput.value;
@@ -75,13 +72,12 @@ container.appendChild(fragment)
 // console.log(eurNomber, typeof eurNomber)
 // Calcul new conversion
 // const newConversion = gbpNomber / CURRENCIES.gbp;
-// 
+//
 // console.log(newConversion);
 // Converting new number in text with 5 digits
 // const newConversionTexte = newConversion.toFixed(5);
-// 
+//
 // console.log(newConversionTexte);
 // Update input
 // eurgbpInput.value = newConversionTexte;
-// });
-// 
+//
