@@ -40,9 +40,9 @@ const onChange = () => {
 }
 
 // Collect all text input
-const inputs = document.querySelectorAll('input')
+const champs = document.querySelectorAll('input')
 
-console.log(inputs)
+console.log(champs)
 
 // Associate a function when changing a input
 
