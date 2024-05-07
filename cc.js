@@ -21,10 +21,10 @@ for (const currency of currenciesList) {
   const divElement = document.createElement('div')
   divElement.innerHTML = `
   <div class="devise">
-    <input type="number" id="eur-${devise}" step="0.00001" value="1" />
+    <input type="number" id="eur-${currency}" step="0.00001" value="1" />
     <span>EUR</span>
     <span class="egal">------------</span>
-    <input type="number" id="${devise}-eur" step="0.00001" value="${rates}" />
+    <input type="number" id="${currency}-eur" step="0.00001" value="${rates}" />
     <span>GBP</span>
   </div>`
 
