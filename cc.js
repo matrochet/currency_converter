@@ -43,7 +43,7 @@ const changeValue = () => {
 const inputs = document.querySelectorAll('input')
 
 for (const champ of inputs) {
-  inputs.addEventListener("input", changeValue)
+  inputs.addEventListener('input', changeValue)
 }
 
 // Associer un évènement qui correspond au changement de la valeur du champ
