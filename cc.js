@@ -14,7 +14,7 @@ console.log(currenciesList);
 const fragment = document.createDocumentFragment();
 
 for (const currency of currenciesList) {
-  const rates = CURRENCIES[currency];
+  const rates = CURRENCIES[currency].toFixed(5)
 
   const divElement = document.createElement("div");
   divElement.innerHTML = `
@@ -35,22 +35,16 @@ const container = document.getElementById("container");
 // Add the fragment to the container
 container.appendChild(fragment)
 
-const onChange = () => {
+const changeValue = () => {
  
 }
 
 // Collect all text input
-const inputs = document.querySelectorAll('input')
+const fields = document.querySelectorAll('input')
 
-console.log(inputs)
-
-// Associate a function when changing a input
-
-const eurgbpInput = document.getElementById("input-eurgbp");
-const gbpeurInput = document.getElementById("input-gbpeur");
-
-// Initialize the rate show at screen
-gbpeurInput.value = CURRENCIES.gbp.toFixed(5);
+for (const champ of fields) {
+  fields.addEventListener('input', changeValue)
+}
 
 // Associer un évènement qui correspond au changement de la valeur du champ
 eurgbpInput.addEventListener("input", () => {
