@@ -42,8 +42,8 @@ const changeValue = () => {
 // Collect all text input
 const fields = document.querySelectorAll('input')
 
-for (const champ of fields) {
-  fields.addEventListener('input', changeValue)
+for (const field of fields) {
+  fields.addEventListener("input", changeValue)
 }
 
 // Associer un évènement qui correspond au changement de la valeur du champ
