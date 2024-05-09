@@ -36,7 +36,7 @@ const container = document.getElementById("container");
 container.appendChild(fragment)
 
 const changeValue = e => {
-  // 
+  
   console.log(e)
   // Récupérer la valeur saisir by user
   const eur = eurgbpInput.value;
