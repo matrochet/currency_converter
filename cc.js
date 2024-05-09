@@ -35,21 +35,9 @@ const container = document.getElementById("container");
 // Add the fragment to the container
 container.appendChild(fragment)
 
-const changeValue = () => {
- 
-}
-
-// Collect all text input
-const inputs = document.querySelectorAll('input')
-
-for (const champ of inputs) {
-  inputs.addEventListener('input', changeValue)
-}
-
-// Associer un évènement qui correspond au changement de la valeur du champ
-eurgbpInput.addEventListener("input", () => {
-
-// Récupérer la valeur saisir by user
+const changeValue = e => {
+  console.log(e)
+ // Récupérer la valeur saisir by user
 const eur = eurgbpInput.value;
 console.log(eur)
 
@@ -69,5 +57,15 @@ console.log(newConversionTexte)
 
 // Update input
 gbpeurInput.value = newConversionTexte;
-});
+}
+
+// Collect all text input
+const inputs = document.querySelectorAll('input')
+
+for (const champ of inputs) {
+  inputs.addEventListener('input', changeValue)
+}
+
+// Associer un évènement qui correspond au changement de la valeur du champ
+// eurgbpInput.addEventListener("input", () => {
 
