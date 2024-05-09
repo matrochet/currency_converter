@@ -36,28 +36,29 @@ const container = document.getElementById("container");
 container.appendChild(fragment)
 
 const changeValue = e => {
+  // 
   console.log(e)
- // Récupérer la valeur saisir by user
-const eur = eurgbpInput.value;
-// console.log(eur)
+  // Récupérer la valeur saisir by user
+  const eur = eurgbpInput.value;
+  // console.log(eur)
 
-//  Convertir la valeur en nombre
-const eurNomber = parseFloat(eur);
-// console.log(eur, typeof eur)
-// console.log(eurNomber, typeof eurNomber)
+  //  Convertir la valeur en nombre
+  const eurNomber = parseFloat(eur);
+  // console.log(eur, typeof eur)
+  // console.log(eurNomber, typeof eurNomber)
 
-// Calcul new conversion
-const newConversion = eurNomber * CURRENCIES.gbp;
-// console.log(newConversion)
+  // Calcul new conversion  
+  const newConversion = eurNomber * CURRENCIES.gbp;
+  // console.log(newConversion)
 
-// Converting new number in text with 5 digits
-const newConversionTexte = newConversion.toFixed(5);
+  // Converting new number in text with 5 digits
+  const newConversionTexte = newConversion.toFixed(5);
 
-console.log(newConversionTexte)
+  console.log(newConversionTexte)
 
-// Update input
-gbpeurInput.value = newConversionTexte;
-}
+  // Update input
+  gbpeurInput.value = newConversionTexte;
+  }
 
 // Collect all text input
 const inputs = document.querySelectorAll('input')
