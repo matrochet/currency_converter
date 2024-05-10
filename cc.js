@@ -67,7 +67,7 @@ for (const champ of inputs) {
   champ.addEventListener('input', changeValue)
 }
 
-// console.log(inputs)
+console.log(inputs)
 
 
 // Associer un évènement qui correspond au changement de la valeur du champ
