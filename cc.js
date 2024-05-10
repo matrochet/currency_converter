@@ -36,7 +36,7 @@ const container = document.getElementById("container");
 container.appendChild(fragment)
 
 const changeValue = e => {
-  
+
   console.log(e)
   // Récupérer la valeur saisir by user
   const eur = eurgbpInput.value;
@@ -66,6 +66,9 @@ const inputs = document.querySelectorAll('input')
 for (const champ of inputs) {
   inputs.addEventListener('input', changeValue)
 }
+
+console.log(inputs)
+
 
 // Associer un évènement qui correspond au changement de la valeur du champ
 // eurgbpInput.addEventListener("input", () => {
