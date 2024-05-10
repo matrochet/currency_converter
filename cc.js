@@ -64,10 +64,10 @@ const changeValue = e => {
 const inputs = document.querySelectorAll('input')
 
 for (const champ of inputs) {
-  inputs.addEventListener('input', changeValue)
+  champ.addEventListener('input', changeValue)
 }
 
-console.log(inputs)
+// console.log(inputs)
 
 
 // Associer un évènement qui correspond au changement de la valeur du champ
