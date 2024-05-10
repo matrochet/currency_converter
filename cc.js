@@ -65,9 +65,11 @@ const inputs = document.querySelectorAll('input')
 
 for (const champ of inputs) {
   champ.addEventListener('input', changeValue)
+
+  console.log(champ)
 }
 
-console.log(champ)
+// console.log(champ)
 
 
 // Associer un évènement qui correspond au changement de la valeur du champ
