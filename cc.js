@@ -36,9 +36,15 @@ const container = document.getElementById("container");
 container.appendChild(fragment)
 
 const changeValue = e => {
+  // Collect the field who has raised the event
+  const champ = e.target
+  const identifiant = champ.id
 
-  console.log(e)
-  // Récupérer la valeur saisir by user
+  console.log(id)
+
+  return 
+
+  // Récupérer la valeur saisit by user
   const eur = eurgbpInput.value;
   // console.log(eur)
 
