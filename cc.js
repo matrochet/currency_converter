@@ -63,20 +63,24 @@ const changeValue = e => {
   // console.log(currencySource, currencyDestination)
 
   // Collect the rate 
-  let rates 
+  let newConversion
+
   // Case 1: The modified value is the value in EUR
   if (currencySource === 'eur') {
-    rates = CURRENCIES[currencyDestination]
+    const rates = CURRENCIES[currencyDestination]
+      // Calcul new conversion  
+    newConversion = valueNomber * rates
   } else {
     // Case 2: The modified value is the currency value
-    rates = CURRENCIES[currencySource]
+    const rates = CURRENCIES[currencySource]
+      // Calcul new conversion  
+    newConversion = valueNomber / rates
   }
 
-  console.log(rates)
+  console.log(newConversion) 
+
   return
 
-  // Calcul new conversion  
-  const newConversion = eurNomber * CURRENCIES.gbp;
   // console.log(newConversion)
 
   // Converting new number in text with 5 digits
