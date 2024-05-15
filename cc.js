@@ -73,7 +73,7 @@ const changeValue = e => {
   }
 
   console.log(rates)
-
+  return
 
   // Calcul new conversion  
   const newConversion = eurNomber * CURRENCIES.gbp;
