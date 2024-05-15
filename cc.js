@@ -79,16 +79,19 @@ const changeValue = e => {
 
   console.log(newConversion) 
 
+  // Converting new number in text with 5 digits
+  const newConversionTexte = newConversion.toFixed(5); 
+
+  // Update input of destination 
+  // Inverse de l'identifiant: "eur-usd" > "usd-eur"
+  
+  // Reverse the originals parts of Id 
+  const currenciesPartsReverse = currenciesParts.reverse()
+ 
+  console.log(currenciesPartsReverse)
+
   return
 
-  // console.log(newConversion)
-
-  // Converting new number in text with 5 digits
-  const newConversionTexte = newConversion.toFixed(5);
-
-  console.log(newConversionTexte)
-
-  // Update input
   gbpeurInput.value = newConversionTexte;
   }
 
@@ -100,9 +103,6 @@ for (const champ of inputs) {
 
   console.log(champ)
 }
-
-// console.log(champ)
-
 
 // Associer un évènement qui correspond au changement de la valeur du champ
 // eurgbpInput.addEventListener("input", () => {
