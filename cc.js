@@ -50,8 +50,6 @@ const changeValue = e => {
   const valueNomber = parseFloat(valueText);
   // console.log(eur, typeof eur)
   // console.log(eurNomber, typeof eurNomber)
-
-  // Collect the rate 
   
   // Collect the source and destination
   const currenciesParts = identifiant.split('-')
@@ -62,11 +60,20 @@ const changeValue = e => {
   // Destination = 2nd element of the array 
   const currencyDestination = currenciesParts[1]
   
-  console.log(currencySource, currencyDestination)
+  // console.log(currencySource, currencyDestination)
 
+  // Collect the rate 
+  let rates 
   // Case 1: The modified value is the value in EUR
+  if (currencySource === 'eur') {
+    rates = CURRENCIES[currencyDestination]
+  } else {
+    // Case 2: The modified value is the currency value
+    rates = CURRENCIES[currencySource]
+  }
 
-  // Case 2: The modified value is the currency value
+  console.log(rates)
+
 
   // Calcul new conversion  
   const newConversion = eurNomber * CURRENCIES.gbp;
