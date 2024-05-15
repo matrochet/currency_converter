@@ -90,9 +90,12 @@ const changeValue = e => {
  
   console.log(currenciesPartsReverse)
 
-  return
+  // Generate Id of destination from parts
+  const identifiantDestination = currenciesPartsReverse.join('-')
 
-  gbpeurInput.value = newConversionTexte;
+  // Colect input 
+  const inputDestination = document.getElementById(identifiantDestination)
+  inputDestination = newConversionTexte;
   }
 
 // Collect all text input
