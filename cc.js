@@ -37,21 +37,36 @@ container.appendChild(fragment)
 
 const changeValue = e => {
   // Collect the field who has raised the event
-  const champ = e.target
-  const identifiant = champ.id
+  const input = e.target
+  const identifiant = input.id
 
-  console.log(id)
-
-  return 
+  // Identifiant: "eur-usd" for example
 
   // Récupérer la valeur saisit by user
-  const eur = eurgbpInput.value;
+  const valueText = input.value;
   // console.log(eur)
 
   //  Convertir la valeur en nombre
-  const eurNomber = parseFloat(eur);
+  const valueNomber = parseFloat(valueText);
   // console.log(eur, typeof eur)
   // console.log(eurNomber, typeof eurNomber)
+
+  // Collect the rate 
+  
+  // Collect the source and destination
+  const currenciesParts = identifiant.split('-')
+
+  // Source = 1st element of the array 
+  const currencySource = currenciesParts[0]
+
+  // Destination = 2nd element of the array 
+  const currencyDestination = currenciesParts[1]
+  
+  console.log(currencySource, currencyDestination)
+
+  // Case 1: The modified value is the value in EUR
+
+  // Case 2: The modified value is the currency value
 
   // Calcul new conversion  
   const newConversion = eurNomber * CURRENCIES.gbp;
