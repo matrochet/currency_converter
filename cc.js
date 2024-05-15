@@ -94,8 +94,8 @@ const changeValue = e => {
   const identifiantDestination = currenciesPartsReverse.join('-')
 
   // Colect input 
-  const inputDestination = document.getElementById(identifiantDestination)
-  inputDestination = newConversionTexte;
+  const champsDestination = document.getElementById(identifiantDestination)
+  champsDestinationDestination = newConversionTexte;
   }
 
 // Collect all text input
