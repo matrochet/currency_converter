@@ -93,7 +93,7 @@ const changeValue = e => {
   // Generate Id of destination from parts
   const identifiantDestination = currenciesPartsReverse.join('-')
 
-  // Colect input 
+  // Collect input 
   let champDestination = document.getElementById(identifiantDestination)
   champDestination = newConversionTexte
   }
