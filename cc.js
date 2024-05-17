@@ -95,7 +95,7 @@ const changeValue = e => {
 
   // Collect input 
   let champDestination = document.getElementById(identifiantDestination)
-  champDestination = newConversionTexte
+  champDestination.value = newConversionTexte
   }
 
 // Collect all text input
