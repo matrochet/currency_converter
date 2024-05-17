@@ -1,7 +1,7 @@
 // Adress of rates from BCE in XML format
 const adress = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
 
-export default async () => {
+export const loadData = async () => {
   const data = await fetch(adress)
     .then(response => {
       if (response.ok === false) {
@@ -12,7 +12,7 @@ export default async () => {
     })
 
   console.log(data)
-  
+
   const CURRENCIES = {};
 
   // Extraire data contenues dans les balises
