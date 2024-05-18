@@ -1,8 +1,8 @@
-const express = require('express')
+import express from 'express'
 const server = express()
 const port = 8080
 
-const fetch = require('node-fecth')
+import fetch from 'node-fecth'
 
 server.get('/cours', async (req, res) => {
     // Adress of rates from BCE in XML format
