@@ -1,5 +1,6 @@
 // Adress of rates from BCE in XML format
-const adress = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
+// const adress = 'https://open.er-api.com/v6/latest/USD'
+const adress = 'currencies.json'
 
 export const loadData = async () => {
   const data = await fetch(adress)
@@ -10,8 +11,9 @@ export const loadData = async () => {
 
       return response.text()
     })
-
+    
   console.log(data)
+  // console.log(data['rates']['AFN'])
 
   const CURRENCIES = {};
 
