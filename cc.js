@@ -1,7 +1,7 @@
 import { loadData } from "./loading.js";
 
 const loadPage = async () => {
-  const CURRENCIES =  await loadData();
+  const CURRENCIES = await loadData();
 
   //Collect all the properties of the CURRENCIES object
   const currenciesList = Object.keys(CURRENCIES);
@@ -15,7 +15,7 @@ const loadPage = async () => {
   const fragment = document.createDocumentFragment();
 
   for (const currency of currenciesList) {
-    const rates = CURRENCIES[currency].toFixed(5)
+    const rates = CURRENCIES[currency].toFixed(5);
 
     const divElement = document.createElement("div");
     divElement.innerHTML = `
@@ -34,12 +34,12 @@ const loadPage = async () => {
   const container = document.getElementById("container");
 
   // Add the fragment to the container
-  container.appendChild(fragment)
+  container.appendChild(fragment);
 
-  const changeValue = e => {
+  const changeValue = (e) => {
     // Collect the field who has raised the event
-    const input = e.target
-    const identifiant = input.id
+    const input = e.target;
+    const identifiant = input.id;
 
     // Identifiant: "eur-usd" for example
 
@@ -51,60 +51,60 @@ const loadPage = async () => {
     const valueNomber = parseFloat(valueText);
     // console.log(eur, typeof eur)
     // console.log(eurNomber, typeof eurNomber)
-    
+
     // Collect the source and destination
-    const currenciesParts = identifiant.split('-')
+    const currenciesParts = identifiant.split("-");
 
-    // Source = 1st element of the array 
-    const currencySource = currenciesParts[0]
+    // Source = 1st element of the array
+    const currencySource = currenciesParts[0];
 
-    // Destination = 2nd element of the array 
-    const currencyDestination = currenciesParts[1]
-    
+    // Destination = 2nd element of the array
+    const currencyDestination = currenciesParts[1];
+
     // console.log(currencySource, currencyDestination)
 
-    // Collect the rate 
-    let newConversion
+    // Collect the rate
+    let newConversion;
 
     // Case 1: The modified value is the value in EUR
-    if (currencySource === 'eur') {
-      const rates = CURRENCIES[currencyDestination]
-        // Calcul new conversion  
-      newConversion = valueNomber * rates
+    if (currencySource === "eur") {
+      const rates = CURRENCIES[currencyDestination];
+      // Calcul new conversion
+      newConversion = valueNomber * rates;
     } else {
       // Case 2: The modified value is the currency value
-      const rates = CURRENCIES[currencySource]
-        // Calcul new conversion  
-      newConversion = valueNomber / rates
+      const rates = CURRENCIES[currencySource];
+      // Calcul new conversion
+      newConversion = valueNomber / rates;
     }
 
-    console.log(newConversion) 
+    console.log(newConversion);
 
     // Converting new number in text with 5 digits
-    const newConversionTexte = newConversion.toFixed(5); 
+    const newConversionTexte = newConversion.toFixed(5);
 
-    // Update input of destination 
+    // Update input of destination
     // Inverse de l'identifiant: "eur-usd" > "usd-eur"
-    
-    // Reverse the originals parts of Id 
-    const currenciesPartsReverse = currenciesParts.reverse()
-  
-    console.log(currenciesPartsReverse)
+
+    // Reverse the originals parts of Id
+    const currenciesPartsReverse = currenciesParts.reverse();
+
+    console.log(currenciesPartsReverse);
 
     // Generate Id of destination from parts
-    const identifiantDestination = currenciesPartsReverse.join('-')
+    const identifiantDestination = currenciesPartsReverse.join("-");
 
-    // Collect input 
-    let champDestination = document.getElementById(identifiantDestination)
-    champDestination.value = newConversionTexte
-    }
+    // Collect input
+    let champDestination = document.getElementById(identifiantDestination);
+    champDestination.value = newConversionTexte;
+  };
 
   // Collect all text input
-  const inputs = document.querySelectorAll('input')
+  const inputs = document.querySelectorAll("input");
 
   for (const champ of inputs) {
-    champ.addEventListener('input', changeValue)
+    champ.addEventListener("input", changeValue);
   }
-}
+};
 
-loadPage()
+loadPage();

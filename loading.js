@@ -13,6 +13,7 @@ export const loadData = async () => {
 
   const CURRENCIES = {};
   const time = data["time_last_update_utc"];
+  console.log(time);
 
   const timeElement = document.getElementById("time");
   timeElement.textContent = `Dates of rates: ${time}`;
