@@ -1,19 +1,30 @@
 import { loadData } from "./loading.js";
 
-console.log("test");
 const init = async () => {
   const data = await loadData();
-  console.log(data);
 
+  // Get input components
   const inputCurrency = document.getElementById("input-currency");
-  console.log(inputCurrency);
+  const outputCurrency = document.getElementById("output-currency");
 
-  for (const [currency, value] in Object.entries(data.rates)) {
-    option = document.createElement("option");
-    option.value = value;
-    inputCurrency.appendChild(option);
+  // Iter on data
+  for (const [currency, value] of Object.entries(data)) {
+    // Create an option
+    const inputOption = document.createElement("option");
+    inputOption.text = currency;
+    inputOption.value = currency;
+
+    // Add option
+    inputCurrency.appendChild(inputOption);
+
+    // Create an option
+    const outputOption = document.createElement("option");
+    outputOption.text = currency;
+    outputOption.value = currency;
+
+    // Add option
+    outputCurrency.appendChild(outputOption);
   }
 };
 
-console.log("test");
 init();
