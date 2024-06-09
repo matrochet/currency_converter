@@ -1,5 +1,7 @@
 import { loadData } from "./loading.js";
 
+const CURRENCIES = await loadData();
+
 // Get input components
 const inputCurrency = document.getElementById("input-currency");
 const outputCurrency = document.getElementById("output-currency");
@@ -7,22 +9,33 @@ const outputCurrency = document.getElementById("output-currency");
 const inputValue = document.getElementById("input-value");
 const outputValue = document.getElementById("output-value");
 
-inputValue.addEventListener("input", (event) => {
-  const value = event.data;
-  const currency = inputCurrency.value;
-
-  // Apply real function to convert currency here
-  const valueConvert = value * 1.5;
-  // --------------------------------------------
-
+function convert() {
+  const value = parseFloat(inputValue.value);
+  const rateOutput = CURRENCIES[outputCurrency.value];
+  const rateInput = CURRENCIES[inputCurrency.value];
+  const rateEUR = CURRENCIES["eur"];
+  console.log(CURRENCIES);
+  const valueConvert = (value / rateInput) * rateOutput;
+  console.log(rateOutput, rateInput, value);
+  // const valueConvert = value * (rateInput / rateEUR) * rateOutput;
   outputValue.value = valueConvert;
+}
+
+inputValue.addEventListener("input", (event) => {
+  convert();
+});
+
+outputCurrency.addEventListener("input", (event) => {
+  convert();
+});
+
+inputCurrency.addEventListener("input", (event) => {
+  convert();
 });
 
 const init = async () => {
-  const data = await loadData();
-
   // Iter on data
-  for (const [currency, value] of Object.entries(data)) {
+  for (const [currency, value] of Object.entries(CURRENCIES)) {
     // Create an option
     const inputOption = document.createElement("option");
     inputOption.text = currency;
