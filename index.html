@@ -7,19 +7,35 @@
   </head>
 
   <body>
-    <h1>Money</h1>
-    <div id="container">
-      <input id="input-value" type="number" />
-      <select id="input-currency"></select>
-      <span>--------</span>
-      <input id="output-value" type="number" readonly />
-      <select id="output-currency"></select>
+    <div class="design">
+      <h1>Currency Converter</h1>
+      <br />
+       <!-- start arrows around currency -->
+<div id="logo"></div>
+<div class="circle">
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+</div>
+<div class="currency-symbol">€</div>
+</div>
+<!-- end arrows around currency -->
+      <div id="container">
+        <input id="input-value" type="number" />
+        <select id="input-currency"></select>
+        <span class="arrowbi">&#8596</span>
+        <!-- <img -->
+        <!-- src="data:image/png;base64,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" -->
+        <!-- /> -->
+        <input id="output-value" type="number" readonly />
+        <select id="output-currency"></select>
+      </div>
+
+      <div id="time" class="time"></div>
+
+      <!-- <script src="./cc.js" type="module"></script> -->
+      <script src="./convert.js" type="module"></script>
+      <!-- <script src="./loading.js"></script> -->
     </div>
-
-    <div id="time" class="time"></div>
-
-    <!-- <script src="./cc.js" type="module"></script> -->
-    <script src="./convert.js" type="module"></script>
-    <!-- <script src="./loading.js"></script> -->
   </body>
 </html>
