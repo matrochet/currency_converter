@@ -1,6 +1,6 @@
 // Adress of rates from BCE in XML format
-// const adress = 'https://open.er-api.com/v6/latest/USD'
-const adress = "currencies.json";
+const adress = "https://open.er-api.com/v6/latest/USD";
+// const adress = "currencies.json";
 
 export const loadData = async () => {
   const data = await fetch(adress).then((response) => {
@@ -14,6 +14,7 @@ export const loadData = async () => {
   const CURRENCIES = {};
   const time = data["time_last_update_utc"];
   console.log(time);
+  console.log("test");
 
   const timeElement = document.getElementById("time");
   timeElement.textContent = `Dates of rates: ${time}`;
