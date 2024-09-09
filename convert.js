@@ -33,14 +33,6 @@ inputCurrency.addEventListener("input", (event) => {
   convert();
 });
 
-// fonction bouton inverser les valeurs des inputs
-function reverseCurrencies() {
-  // inverse les valeurs des deux champs de saisies
-  const firstInput = document.getElementById("input-value").value;
-  const secondInput = document.getElementById("output-value").value;
-}
-// fin fonction bouton
-
 const init = async () => {
   // Iter on data
   for (const [currency, value] of Object.entries(CURRENCIES)) {
@@ -61,5 +53,13 @@ const init = async () => {
     outputCurrency.appendChild(outputOption);
   }
 };
+
+// fonction bouton inverser les valeurs des inputs
+function reverseCurrencies() {
+  // inverse les valeurs des deux champs de saisies
+  const firstInput = document.getElementById("input-value").value;
+  const secondInput = document.getElementById("output-value").value;
+}
+// fin fonction bouton
 
 init();
