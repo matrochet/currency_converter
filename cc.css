@@ -225,4 +225,5 @@ button {
     rgba(97, 121, 113, 1) 74%,
     rgba(196, 246, 194, 1) 100%
   );
+  border: 2px solid black;
 }
