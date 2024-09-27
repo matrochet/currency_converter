@@ -233,8 +233,8 @@ button {
  }
 } */
 
-@media (min-height: 680px), screen and (orientation: portrait) {
-  body {
+@media (min-height: 1000px) {
+  .blocks {
     flex-direction: column;
   }
 }

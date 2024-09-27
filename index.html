@@ -9,33 +9,35 @@
   </head>
 
   <body>
-    <div class="design">
-      <h1>Currency Converter</h1>
-      <br />
-      <!-- start arrows around currency -->
-      <div id="logo"></div>
-      <span id="animation-container">
-        <span class="circle">
-          <span class="arrow"></span>
-          <span class="arrow"></span>
-          <span class="arrow"></span>
+    <div class="blocks">
+      <div class="design">
+        <h1>Currency Converter</h1>
+        <br />
+        <!-- start arrows around currency -->
+        <div id="logo"></div>
+        <span id="animation-container">
+          <span class="circle">
+            <span class="arrow"></span>
+            <span class="arrow"></span>
+            <span class="arrow"></span>
+          </span>
+          <span class="currency-symbol">€</span>
         </span>
-        <span class="currency-symbol">€</span>
-      </span>
+      </div>
+      <!-- end arrows around currency -->
+      <div id="container">
+        <input id="input-value" type="number" />
+        <select id="input-currency"></select>
+        <!-- <span class="arrowbi">&harr;</span> -->
+
+        <button class="arrowbi" onclick="reverseCurrencies()">&harr;</button>
+
+        <input id="output-value" type="number" readonly />
+        <select id="output-currency"></select>
+      </div>
+
+      <div id="time" class="time"></div>
     </div>
-    <!-- end arrows around currency -->
-    <div id="container">
-      <input id="input-value" type="number" />
-      <select id="input-currency"></select>
-      <!-- <span class="arrowbi">&harr;</span> -->
-
-      <button class="arrowbi" onclick="reverseCurrencies()">&harr;</button>
-
-      <input id="output-value" type="number" readonly />
-      <select id="output-currency"></select>
-    </div>
-
-    <div id="time" class="time"></div>
 
     <!-- <script src="./cc.js" type="module"></script> -->
     <script src="./convert.js" type="module"></script>
