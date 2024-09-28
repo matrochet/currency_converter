@@ -280,6 +280,7 @@ button {
 
 @media (max-width: 768px) {
   .blocks {
+    height: 100vh;
     width: 100vw; /* Assure que le conteneur occupe presque toute la largeur de l'écran */
     background: linear-gradient(
       221deg,
